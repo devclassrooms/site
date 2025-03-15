@@ -1,18 +1,27 @@
 /*import logo from './logo.svg';*/
 import {NavLink} from 'react-router-dom';
-import React from 'react'
+import React,{ useState } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Img from './image/abcd.png';
 import Img_ordi from './image/image_ordi.png'
+import Img_ordi2 from './image/tel.svg'
 
 const Home = () => <h1>Bienvenue à la maison</h1>;
 /*const About = () => <h1>À propos de nous</h1>;*/
 
 function App() {
+
+    const [isBlack, setIsBlack] = useState(false);
+    
+    const toggleBackground = () => {
+      setIsBlack(!isBlack);
+    };
+
   return (
     <Router>
       <div className="App">
+        <div className={isBlack ? 'black-bg container' : 'white-bg container'}> 
         <header className="App-header">
           <nav>
             <div className='img_logo'>
@@ -21,16 +30,34 @@ function App() {
               </NavLink>
             </div>
             <div className='lien'>
-              <NavLink to="/">Accueil</NavLink>
-              <NavLink to="/apropos">Contacte</NavLink>
-              <NavLink to="/projet">Projet</NavLink>
+              <div className='container_a'>
+              <NavLink className='lienAccueil' to="/">Accueil</NavLink>
+              </div>
+              <div className='container_a'>
+              <NavLink className='lienContacte'to="/apropos">Contacte</NavLink>
+              </div>
+              <div className='container_a'>
+              <NavLink className='lienProjet'to="/projet">Projet</NavLink>
+              </div>
             </div>
+            <div className='img_logo_dev'>
+              <img 
+                className={isBlack ? 'black-bg img_dev_nav' : 'white-bg img_dev_nav'}
+                src="https://media1.giphy.com/media/WIAXKEDP8R0IBSAXUk/giphy.gif" // Remplace par ton image
+                alt="Toggle Background" 
+                onClick={toggleBackground} 
+                />
+             </div>
           </nav>
+          <div className='num_tel'>
+            <a className='bt_num' href="tel:+33758125523"><img className='svg_tel' src={Img_ordi2} alt="Appeler ce numéro" width="30" height="30"/>07.58.12.55.23</a>
+          </div>
         </header>
         <div className='img_mid'>
           <div className='img_text'>
             <p>Bienvenue sur mon site ! Je suis heureux de vous accueillir.</p>
-            <img src={Img_ordi}></img>
+            <img src={Img_ordi}>
+            </img>
           </div>
         </div>
         <div className='mid'>
@@ -51,7 +78,7 @@ function App() {
           <footer>
             <div className='footer_img_logo'>
                 <NavLink to="/">
-                  <img src={Img} alt="image"/>
+                  <img className='img_footer' src={Img} alt="image"/>
                 </NavLink>
             </div>
             <div>
@@ -62,6 +89,7 @@ function App() {
         <Routes>
             <Route exact path="/" component={Home} />
         </Routes>
+        </div>
       </div>
     </Router>
   );
