@@ -29,15 +29,15 @@ function App() {
                 <img src={Img} alt="image" />
               </NavLink>
             </div>
-            <div className='lien'>
+            <div className='lien' id='lien_id'>
               <div className='container_a'>
-              <NavLink className='lienAccueil' to="/">Accueil</NavLink>
+              <NavLink className='lienAccueil' to="/" id='vvv'>Accueil</NavLink>
               </div>
               <div className='container_a'>
-              <NavLink className='lienContacte'to="/apropos">Contacte</NavLink>
+              <NavLink className='lienContacte'to="/apropos" id='vvv'>Contacte</NavLink>
               </div>
               <div className='container_a'>
-              <NavLink className='lienProjet'to="/projet">Projet</NavLink>
+              <NavLink className='lienProjet'to="/projet" id='vvv'>Projet</NavLink>
               </div>
             </div>
             <div className='img_logo_dev'>
@@ -76,7 +76,7 @@ function App() {
         </div>
         <div className='footer'>
           <footer>
-            <div className='footer_img_logo'>
+            <div className='footer_img_logo' id='footer_img_logo_id'>
                 <NavLink to="/">
                   <img className='img_footer' src={Img} alt="image"/>
                 </NavLink>

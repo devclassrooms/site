@@ -46,6 +46,33 @@ nav img{
  height: 21px;
 }
 
+@media (max-width:500px)
+{
+  header{
+    position: relative;
+  }
+  #lien_id{
+    position: absolute;
+    margin-top: 160px;
+  }
+  .container_a{
+    width: 27vw;
+  }
+  #vvv{
+    font-size: 17px;
+  }
+  .num_tel{
+    margin-top: 75px;
+  }
+  nav img{
+    width: 24vw;
+  }
+  #footer_img_logo_id img{
+    width: 19vw;
+  }
+}
+
+
 
 @keyframes spin {
   0%{
@@ -345,7 +372,7 @@ nav img{
   transform: translate(-50%, -50%);
   z-index: 1;
   color: rgb(0, 255, 170);
-  font-size: 6vh;
+  font-size: 5vh;
 
 }
 
