@@ -4,6 +4,7 @@ import React,{ useState } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Img from './image/abcd.png';
+
 import Img_ordi from './image/image_ordi.png'
 import Img_ordi2 from './image/tel.svg'
 
@@ -13,6 +14,11 @@ const Home = () => <h1>Bienvenue à la maison</h1>;
 function App() {
 
     const [isBlack, setIsBlack] = useState(false);
+    const [isHide, setIsHide] = useState(false);
+
+    const toggleHide = () => {
+      setIsHide(prevState => !prevState); // Inverse l'état actuel
+    }
     
     const toggleBackground = () => {
       setIsBlack(!isBlack);
@@ -64,6 +70,12 @@ function App() {
             <div>
               <p><span className='mid_name'>Je m’appelle Hosni Bouhlel Boughdira </span><br></br> Je suis <span className='text_l'>développeur web</span>. J’ai acquis une solide expertise dans différents langages de programmation tels que <span className='text_l'>C, C++, JavaScript, Node.js et React.js,</span> ainsi que dans les <span className='text_l'>API REST</span> et le référencement naturel <span className='text_l'>(SEO)</span>.</p>
             </div>
+            <div className='telecharger'>
+                <a href='/cv_sans.pdf' download>
+                  <span>Télécharger</span>
+                  <span>CV</span> 
+                </a>
+            </div>
             <div>
               <p>J’ai suivi une formation de deux ans à l’école 42, reconnue pour sa rigueur et son excellence en matière de développement informatique. J’ai également suivi des cours en ligne sur la plateforme Openclassrooms, où j’ai obtenu un diplôme de développeur web de niveau bac+2.</p>
             </div>
@@ -72,6 +84,12 @@ function App() {
             </div>
             <div>
               <p>N’hésitez pas à parcourir mon portfolio pour découvrir mes projets passés et à me contacter si vous avez des questions ou si vous souhaitez travailler avec moi sur un projet de développement web. Je suis impatient de collaborer avec vous !</p>
+            </div>
+            <div className={isHide ? 'warning_togle_hide' : 'warning_togle'}>
+              <div className='warning_mid'>
+                <h3>Attention le site est actuellement en maintenance. Certaines fonctionnalités pourraient être temporairement inaccessibles. Merci de votre compréhension.</h3>
+                <span onClick={toggleHide}>x</span>
+              </div>
             </div>
         </div>
         <div className='footer'>
