@@ -71,7 +71,7 @@ function App() {
               <p><span className='mid_name'>Je m’appelle Hosni Bouhlel Boughdira </span><br></br> Je suis <span className='text_l'>développeur web</span>. J’ai acquis une solide expertise dans différents langages de programmation tels que <span className='text_l'>C, C++, JavaScript, Node.js et React.js,</span> ainsi que dans les <span className='text_l'>API REST</span> et le référencement naturel <span className='text_l'>(SEO)</span>.</p>
             </div>
             <div className='telecharger'>
-                <a href='/cv_sans.pdf' download>
+                <a href="https://devclassrooms.github.io/site/cv_pro.pdf" download="cv_pro.pdf">
                   <span>Télécharger</span>
                   <span>CV</span> 
                 </a>
