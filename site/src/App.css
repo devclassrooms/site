@@ -3,6 +3,11 @@
   padding: 0;
 }
 
+/**********chargement***********/
+
+
+
+
 /*body{
   padding: 0 7%;
 }*/
@@ -519,4 +524,41 @@ footer{
   color: #fff;
   text-align: center;
   box-shadow: gray 0px -27px 9px -26px;
+}
+
+#chargement{
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  z-index: 2;
+  animation: load 4s forwards;
+  animation-fill-mode: forwards;
+}
+
+@keyframes load {
+  0%{
+    opacity: 1;
+  }
+  
+  50%{
+    opacity: 0.8;
+    z-index: 2;
+  }
+  60%{
+    opacity: 0.8;
+    z-index: 2;
+  }
+  70%{
+    opacity: 0.3;
+    z-index: 1;
+  }
+  100%{
+    opacity: 0;
+    z-index: -1;
+  }
+} 
+
+#chargement img{
+  width: 100%;
+  height: 100%;
 }
