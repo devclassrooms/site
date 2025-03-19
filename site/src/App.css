@@ -531,7 +531,7 @@ footer{
   width: 100vw;
   position: fixed;
   z-index: 2;
-  animation: load 4s forwards;
+  animation: load 7.2s forwards;
   animation-fill-mode: forwards;
 }
 
